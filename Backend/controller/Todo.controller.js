@@ -3,7 +3,7 @@ export const addTodo= async (req ,res)=>{
 
      try {
         
-        const {name}=req.body
+        const {name}=req.body.todo
         if(!name)
         {
             return res.send("name are required")

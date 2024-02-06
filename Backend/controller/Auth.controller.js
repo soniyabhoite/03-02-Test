@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt'
 export const register= async (req,res)=>{
 
      try {
-        const {name,email,password,confirmPassword}=req.body
+        const {name,email,password,confirmPassword}=req.body.userData
         console.log(req.body)
         if(!name || !email || !password || !confirmPassword)
         {
@@ -39,7 +39,7 @@ export const register= async (req,res)=>{
 export const login= async (req,res)=>{
     try {
 
-        const {email ,password} = req.body
+        const {email ,password} = req.body.loginData
         if(!email || !password)
         {
             return res.status(401).json({success:false,message:"email and password required"})

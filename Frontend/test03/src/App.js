@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { Routes , Route} from 'react-router-dom';
+import RegisterForm from './components/RegisterForm';
+import LoginForm from './components/LoginForm';
+import AddTodo from './components/AddTodo';
+import DisplayTodo from './components/DisplayTodo';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Routes>
+       <Route path='register-form' element={<RegisterForm/>}/>
+       <Route path='login-form' element={<LoginForm/>}/>
+       <Route path='add-todo' element={<AddTodo/>}/>
+       <Route path='display-todo' element={<DisplayTodo/>}/>
+       </Routes>
     </div>
   );
 }
